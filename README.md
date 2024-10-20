@@ -1,5 +1,6 @@
+<h2> Procedure </h2>
 
-connect pins RX, TX, GND of serial UART to Raspberry UART pins.
+connect pins rx, tx, gnd pins of serial USB connector to Raspberry UART pins.
 
 flash buster headless image on sd card using
 
