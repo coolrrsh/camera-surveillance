@@ -11,7 +11,9 @@ sudo sh -c "xzcat image.wic.xz | dd of=/dev/sdx bs=8M"
 Once flashing is completed, re-mount the SD card to PC and execute the following command.
 
 ``` 
-echo >> "enable_uart=1" /etc/bootfs/config.txt
+echo  "enable_uart=1" >> /etc/bootfs/config.txt
+echo "core_freq=250" >> /etc/bootfs/config.txt
+echo "init_uart_baud=115200" >> /etc/bootfs/config.txt
 
 echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" > userconf.txt
 ```
@@ -19,7 +21,7 @@ echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" > userconf.txt
 Append the following console args in boot/cmdline.txt
 
 ```
-console=serial0,115200
+console=serial0,115200 console=tty1 
 
 ```
 
